@@ -1,58 +1,44 @@
 ---
-author: Sat Naing
-pubDatetime: 2022-09-23T15:22:00Z
-title: Adding new posts in AstroPaper theme
-postSlug: adding-new-posts-in-astropaper-theme
-featured: false
+author: Rizky Mubarok
+pubDatetime: 2023-04-28T15:22:00Z
+title: Scraping and ingest the data to postgreSQL with Python
+postSlug: scraping-and-ingest-data-postgresql
+featured: true
 draft: true
 tags:
-  - docs
-ogImage: ""
-description:
-  Some rules & recommendations for creating or adding new posts using AstroPaper
-  theme.dasdasdasdas
+  - Data engineering
+  - Python
+  - PostgreSQL
+  - Docker
+  - BeautifulSoup4
+description: Practicing data ingestion with scraping papers data from https://jtiulm.ti.ft.ulm.ac.id/index.php/jtiulm/issue/archive and load the data to PostgresSQL with python
 ---
 
-Here are some rules/recommendations, tips & ticks for creating new posts in AstroPaper blog theme.
+> In this post i will explain how i manage this project end to end from scraping and load the data to PostgreSQL. or you can check the code repository for this blog post. [Github Repository](https://github.com/gitbarok/Ingest-JTIULM-paper-details-to-PostgreSQL). And I assume that you are familiar with python and basic SQL query :)
 
 ## Table of contents
 
-## Frontmatter
+## Background
 
-Frontmatter is the main place to store some important information about the post (article). Frontmatter lies at the top of the article and is written in YAML format. Read more about frontmatter and its usage in [astro documentation](https://docs.astro.build/en/guides/markdown-content/).
+Projek ini sebenarnya adalah projek pengembangan dari skrip yang telah saya buat sebelumnya, yang anda dapat lihat pada [Scraping Jurnal-Klik Github Repository](https://github.com/gitbarok/scraping-jurnalklik). pada projek tersebut, menggunakan python dan library `BeautifulSoup4` untuk alat scraping data, namun data yang selesai discraping akan diexport dalam format csv. pada projek ini data yang berhasil discarping akan diload kedalam database postgresSQL.
 
-Here is the list of frontmatter property for each post.
+## What tools to use?
 
-| Property          | Description                                                                     | Remark                                        |
-| ----------------- | ------------------------------------------------------------------------------- | --------------------------------------------- |
-| **_title_**       | Title of the post. (h1)                                                         | required<sup>\*</sup>                         |
-| **_description_** | Description of the post. Used in post excerpt and site description of the post. | required<sup>\*</sup>                         |
-| **_pubDatetime_** | Published datetime in ISO 8601 format.                                          | required<sup>\*</sup>                         |
-| **_author_**      | Author of the post.                                                             | default = SITE.author                         |
-| **_postSlug_**    | Slug for the post. Will automatically be slugified.                             | default = slugified title                     |
-| **_featured_**    | Whether or not display this post in featured section of home page               | default = false                               |
-| **_draft_**       | Mark this post 'unpublished'.                                                   | default = false                               |
-| **_tags_**        | Related keywords for this post. Written in array yaml format.                   | default = others                              |
-| **_ogImage_**     | OG image of the post. Useful for social media sharing and SEO.                  | default = SITE.ogImage or generated SVG image |
+Here is the list of the tools for this project:
 
-Only `title`, `description` and `pubDatetime` fields in frontmatter must be specified.
+| Tools            | Description                                        | Notes                                                               |
+| ---------------- | -------------------------------------------------- | ------------------------------------------------------------------- |
+| **_Python_**     | Proggraming languange that we use in this project. | required<sup>\*</sup>                                               |
+| **_PostgreSQL_** | For database to store the data.                    | required<sup>\*</sup>                                               |
+| **_Docker_**     | To running PostgresSQL as Container.               | optional<sup>\*</sup>                                               |
+| **_DBeaver_**    | Database Administration Tool.                      | optional<sup>\*</sup> or you can use another DB Administration tool |
 
-Title and description (excerpt) are important for search engine optimization (SEO) and thus AstroPaper encourages to include these in blog posts.
+Only `Python` and `PostgreSQL` is a must to install locally in your machine.
+But for this post i used docker to running my `postgreSQL` as a container.
 
-`slug` is the unique identifier of the url. Thus, `slug` must be unique and different from other posts. The whitespace of `slug` needs to be separated with `-` or `_` but `-` is recommended. However, even if you don't write the correct slug, AstroPaper will automatically slugify your incorrect slug. If slug is not specified, the slugified title of the post will be used as slug.
+## Let's Code!
 
-If you omit `tags` in a blog post (in other words, if no tag is specified), the default tag `others` will be used as a tag for that post. You can set the default tag in the `/src/content/_schemas.ts` file.
-
-```ts
-// src/contents/_schemas.ts
-export const blogSchema = z.object({
-  // ---
-  // replace "others" with whatever you want
-  tags: z.array(z.string()).default(["others"]),
-  ogImage: z.string().optional(),
-  description: z.string(),
-});
-```
+###
 
 ### Sample Frontmatter
 
