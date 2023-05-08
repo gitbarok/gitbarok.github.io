@@ -10,7 +10,7 @@ tags:
   - PostgreSQL
   - Docker
   - BeautifulSoup4
-description: Scrape paper data from https://jtiulm.ti.ft.ulm.ac.id/index.php/jtiulm/issue/archive and load it into PostgreSQL with Python. Discover the process of data scraping, data processing with Python, and database loading. this practical project to improve my data ingestion skills!
+description: Scrape paper data from https://jtiulm.ti.ft.ulm.ac.id and load it into PostgreSQL with Python. Discover the process of data scraping, data processing with Python, and database loading. this practical project to improve my data ingestion skills!
 ---
 
 > So, in this post, I'm gonna break down how I manage this project from start to finish - that includes scraping data and loading it into PostgreSQL. If you're curious about the code, you can check out the Github repository right over here: [Github Repository](https://github.com/gitbarok/Ingest-JTIULM-paper-details-to-PostgreSQL). But just a heads up - I'm assuming for this project you've got some basic knowledge of Python and SQL queries :).
