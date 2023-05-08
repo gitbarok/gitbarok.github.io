@@ -1,10 +1,9 @@
 ---
 author: Rizky Mubarok
-pubDatetime: 2023-05-07T02:44:52.737Z
-title: Scraping and ingest the data to postgreSQL with Python
+pubDatetime: 2023-05-07T10:44:52.737Z
+title: Scraping and ingest data to postgreSQL with Python
 postSlug: scraping-and-ingest-data-postgresql
 featured: true
-draft: false
 tags:
   - Data engineering
   - Python
