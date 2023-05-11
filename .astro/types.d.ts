@@ -87,16 +87,16 @@ declare module 'astro:content' {
 
 	const entryMap: {
 		"blog": {
-"astro-paper-2.md": {
-  id: "astro-paper-2.md",
-  slug: "astro-paper-2",
+"ingest-postgres-python.md": {
+  id: "ingest-postgres-python.md",
+  slug: "ingest-postgres-python",
   body: string,
   collection: "blog",
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] },
-"scraping-ingest-python.md": {
-  id: "scraping-ingest-python.md",
-  slug: "scraping-ingest-python",
+"streamlit-dashboard.md": {
+  id: "streamlit-dashboard.md",
+  slug: "streamlit-dashboard",
   body: string,
   collection: "blog",
   data: InferEntrySchema<"blog">
