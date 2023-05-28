@@ -1,7 +1,7 @@
 ---
 author: Rizky Mubarok
 pubDatetime: 2023-05-13T23:09:09.000+08:00
-title: Data Visualization with Streamlit and Tableau
+title: D.I Yogyakarta Minimum Wage Data Visualization with Streamlit and Tableau
 postSlug: data-visualization-streamlit-tableau
 featured: true
 tags:
