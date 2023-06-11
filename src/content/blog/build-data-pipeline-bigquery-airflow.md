@@ -1,6 +1,6 @@
 ---
 author: Rizky Mubarok
-pubDatetime: 2023-06-07T12:39:52.737Z
+pubDatetime: 2023-06-07T12:40:52.737Z
 title: Building data-pipeline using Airflow, Docker and BigQuery
 postSlug: data-pipeline-airflow-bigquery
 featured: true
