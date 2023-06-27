@@ -87,9 +87,23 @@ declare module 'astro:content' {
 
 	const entryMap: {
 		"blog": {
+"build-data-pipeline-bigquery-airflow.md": {
+  id: "build-data-pipeline-bigquery-airflow.md",
+  slug: "build-data-pipeline-bigquery-airflow",
+  body: string,
+  collection: "blog",
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] },
 "ingest-postgres-python.md": {
   id: "ingest-postgres-python.md",
   slug: "ingest-postgres-python",
+  body: string,
+  collection: "blog",
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] },
+"online-retail-transaction-analysis.md": {
+  id: "online-retail-transaction-analysis.md",
+  slug: "online-retail-transaction-analysis",
   body: string,
   collection: "blog",
   data: InferEntrySchema<"blog">
